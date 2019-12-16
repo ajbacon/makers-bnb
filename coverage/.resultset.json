@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/abacon/Projects/makers/week6/makers-bnb/app.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/app.rb": [
         1,
         1,
         null,
@@ -12,6 +12,12 @@
         null,
         1,
         1,
+        null,
+        null,
+        1,
+        12,
+        12,
+        12,
         null,
         null,
         1,
@@ -19,18 +25,43 @@
         null,
         null,
         1,
+        3,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
         2,
         null,
         null,
         1,
-        1,
-        null,
+        0,
         null,
         null,
         1,
         null
       ],
-      "/Users/abacon/Projects/makers/week6/makers-bnb/spec/back_end/features/index_spec.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/web_helpers.rb": [
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/index_spec.rb": [
         1,
         1,
         1,
@@ -38,7 +69,29 @@
         null,
         null
       ],
-      "/Users/abacon/Projects/makers/week6/makers-bnb/spec/back_end/features/sign_up_spec.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/sign_in_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/sign_up_spec.rb": [
         1,
         1,
         1,
@@ -54,22 +107,14 @@
         null,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         null,
         1,
         1,
         1,
-        null,
         null,
         null
       ]
     },
-    "timestamp": 1576511485
+    "timestamp": 1576515852
   }
 }

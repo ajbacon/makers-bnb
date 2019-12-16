@@ -14,8 +14,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'sinatra/activerecord'
 require_relative '../app'
-
-# require_relative 'features/web_helpers.rb'
+require_relative 'back_end/features/web_helpers.rb'
 Capybara.app = MakersBnB
 
 RSpec.configure do |config|

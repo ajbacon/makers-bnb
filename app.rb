@@ -11,6 +11,8 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
+    @email = session[:email]
+    @password = session[:password]
     erb :index
   end
 
@@ -22,6 +24,16 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
   
+  post '/sessions' do
+    session[:email] = params['email']
+    session[:password] = params['password']
+    'authenticate'
+    redirect '/'
+  end
+
+  get '/accounts/:id' do
+    erb :'accounts/new'
+  end
 
   run! if app_file == $0
 end
