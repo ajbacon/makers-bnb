@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: makersbnb
+
+test:
+  adapter: postgresql
+  database: makersbnb_test

@@ -7,5 +7,6 @@ feature 'sign up' do
     page.has_field? 'Email'
     page.has_field? 'Password'
     page.has_field? 'Confirm Password'
+    page.has_button? 'Sign Up'
   end
 end
