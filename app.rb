@@ -31,9 +31,9 @@ class MakersBnB < Sinatra::Base
     redirect '/'
   end
 
-  get '/accounts/:id' do
-    erb :'accounts/new'
-  end
+  get '/spaces' do
+    erb :'spaces/index'
+  end 
 
   run! if app_file == $0
 end
