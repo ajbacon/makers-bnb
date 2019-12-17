@@ -7,7 +7,13 @@
   <title>Document</title>
 </head>
 <body>
-  <h2>Requests I've made</h2>
-  <h2>Requests I've received</h2>
+  <div>
+    <h2>Requests I've made</h2>
+      <%= Space.all.first.name %>
+      <%= Request.all.first.date_requested %>
+  </div>
+  <div>
+    <h2>Requests I've received</h2>
+  </div>
 </body>
 </html>

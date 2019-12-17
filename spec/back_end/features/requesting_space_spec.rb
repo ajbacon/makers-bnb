@@ -7,5 +7,10 @@ feature 'requesting a space' do
 
     click_on "space-#{test_space.id}"
     expect(page).to have_content test_space.description
+    fill_in 'requested-date', with: '12122020'
+    click_on 'Request to Book'
+
+    expect(page).to have_current_path '/requests'
+    expect(page).to have_content test_space.name
   end
 end

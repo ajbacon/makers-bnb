@@ -8,5 +8,10 @@
 </head>
 <body>
   <%= @space.description %>
+  <form action="/requests" method="POST">
+    <label for="Requested Date">
+    <input type="date" name="requested-date" id="Requested Date">
+    <input type="submit" value="Request to Book">
+  </form>
 </body>
 </html>

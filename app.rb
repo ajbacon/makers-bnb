@@ -4,6 +4,7 @@ require 'sinatra/activerecord'
 require 'sinatra/flash'
 require_relative 'lib/user'
 require_relative 'lib/space'
+require_relative 'lib/request'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')
 
@@ -28,8 +29,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/sessions/new' do
-    user = User.where({ email: params['email address'], password: params['password'] }).first
-    redirect '/sessions/new' unless user
+    session[:user] = User.where({ email: params['email address'], password: params['password'] }).first
+    redirect '/sessions/new' unless session[:user]
 
     redirect '/spaces'
   end
@@ -44,17 +45,25 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(name: params[:name], description: params[:description], price_per_night: params[:'price-per-night'])
+    Space.create(name: params[:name], user_id: session[:user].id, description: params[:description], price_per_night: params[:'price-per-night'])
     redirect '/spaces'
   end
 
   get '/spaces/:id' do
-    @space = Space.find(params[:id])
+    session[:space] = Space.find(params[:id])
+    @space = session[:space]
     erb :'spaces/profile'
   end
 
+  post '/requests' do
+    Request.create({ user_id: session[:user].id, date_requested: params['requested-date'], space_id: session[:space].id })
+    redirect '/requests'
+  end
+
   get '/requests' do
-    'Requests I\'ve made Requests I\'ve received'
+    # p @found_request = Request.where(user_id: session[:user].id).first
+    # p @space = Space.where({ id: @found_request.space_id })
+    erb :'requests/index'
   end
 
   run! if app_file == $0
