@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+
 require 'sinatra/flash'
 require_relative './lib/space'
 
@@ -13,23 +14,22 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
-    @email = session[:email]
-    @password = session[:password]
     erb :index
   end
 
-  get '/users/new' do
-    erb :'users/new'
+  get '/sessions/new' do
+    erb :'sessions/new'
+  end 
+
+  post '/users/new' do
+    User.create({ email: params['email address'], password: params['password'] })
+    redirect '/spaces'
   end
 
-  post '/users' do
-    redirect '/'
-  end
-  
-  post '/sessions' do
-    session[:email] = params['email']
-    session[:password] = params['password']
-    'authenticate'
+  post '/sessions/new' do
+    user = User.where({ email: params['email address'], password: params['password'] }).first
+    redirect '/sessions/new' unless user
+
     redirect '/spaces'
   end
 
