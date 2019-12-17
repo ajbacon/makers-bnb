@@ -8,14 +8,7 @@
   </head>
   <body>
     <h1>Feel at home, anywhere</h1>
-    <% if @password == 'pass1' %>
-    <span>Welcome, <%= @email %></span>
-    <% end %>
-    <form action='/sessions' method='POST'>
-      <input type='email' name='email' placeholder='Enter Email'>
-      <input type='password' name='password' placeholder='Enter Password'> 
-      <input type='submit' value='Sign In'>
-    </form>
+      <a href='/sessions/new'> Login</a>
 
     <form action='/users/new' method='GET'>
       <input type='submit' value='Sign Up'>

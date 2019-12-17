@@ -11,10 +11,14 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
-    @email = session[:email]
-    @password = session[:password]
+    # @email = session[:email]
+    # @password = session[:password]
     erb :index
   end
+
+  get '/sessions/new' do
+    erb :'sessions/new'
+  end 
 
   get '/users/new' do
     erb :'users/new'
@@ -23,12 +27,13 @@ class MakersBnB < Sinatra::Base
   post '/users' do
     redirect '/'
   end
+
   
   post '/sessions' do
     session[:email] = params['email']
     session[:password] = params['password']
     'authenticate'
-    redirect '/'
+    redirect '/spaces'
   end
 
   get '/spaces' do

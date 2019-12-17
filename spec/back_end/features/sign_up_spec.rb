@@ -10,12 +10,4 @@ feature 'sign up' do
     expect(page.has_button? 'Create Account').to be true
     expect(page).to have_current_path('/users/new')
   end
-
-  scenario 'a user can sign in after signing up' do
-    sign_up
-    
-    expect(page.has_field? 'email').to be true
-    expect(page.has_field? 'password').to be true
-    expect(page).to have_current_path('/')
-  end
 end
