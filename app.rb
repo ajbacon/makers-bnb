@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/flash'
 require_relative './lib/space'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/andreadiotallevi/Code/makers/week6/makers-bnb/app.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/app.rb": [
         1,
         1,
         1,
@@ -53,7 +53,7 @@
         1,
         null
       ],
-      "/Users/andreadiotallevi/Code/makers/week6/makers-bnb/lib/space.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/lib/space.rb": [
         1,
         1,
         null,
@@ -61,7 +61,7 @@
         null,
         null
       ],
-      "/Users/andreadiotallevi/Code/makers/week6/makers-bnb/spec/back_end/features/web_helpers.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/web_helpers.rb": [
         1,
         4,
         4,
@@ -80,7 +80,7 @@
         2,
         null
       ],
-      "/Users/andreadiotallevi/Code/makers/week6/makers-bnb/spec/back_end/features/index_spec.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/index_spec.rb": [
         1,
         1,
         1,
@@ -88,7 +88,7 @@
         null,
         null
       ],
-      "/Users/andreadiotallevi/Code/makers/week6/makers-bnb/spec/back_end/features/list_spaces_spec.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/list_spaces_spec.rb": [
         1,
         1,
         1,
@@ -110,7 +110,7 @@
         null,
         null
       ],
-      "/Users/andreadiotallevi/Code/makers/week6/makers-bnb/spec/back_end/features/sign_in_spec.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/sign_in_spec.rb": [
         1,
         1,
         1,
@@ -132,7 +132,7 @@
         null,
         null
       ],
-      "/Users/andreadiotallevi/Code/makers/week6/makers-bnb/spec/back_end/features/sign_up_spec.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/sign_up_spec.rb": [
         1,
         1,
         1,
@@ -155,7 +155,7 @@
         null,
         null
       ],
-      "/Users/andreadiotallevi/Code/makers/week6/makers-bnb/spec/back_end/features/spaces_spec.rb": [
+      "/Users/SamFolorunsho/CODE Projects/Makers Academy/makers-bnb/spec/back_end/features/spaces_spec.rb": [
         null,
         null,
         null,
@@ -168,6 +168,6 @@
         null
       ]
     },
-    "timestamp": 1576583654
+    "timestamp": 1576586916
   }
 }
