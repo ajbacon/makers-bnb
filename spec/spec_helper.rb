@@ -19,7 +19,7 @@ Capybara.app = MakersBnB
 
 RSpec.configure do |config|
   config.before(:each) do
-    ActiveRecord::Base.connection.execute('TRUNCATE users, spaces')
+    ActiveRecord::Base.connection.execute('TRUNCATE users, spaces, requests')
   end
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

@@ -50,6 +50,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/:id' do
+    p params[:id]
     session[:space] = Space.find(params[:id])
     @space = session[:space]
     erb :'spaces/profile'
@@ -61,8 +62,9 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/requests' do
-    # p @found_request = Request.where(user_id: session[:user].id).first
-    # p @space = Space.where({ id: @found_request.space_id })
+    p 'this is session user', session[:user]
+    p 'this is arequest', @requests = Request.where(user_id: session[:user].id)
+    # p 'this is a space', @space = Space.where({ user_id: @found_request.user_id })
     erb :'requests/index'
   end
 
