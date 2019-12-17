@@ -1,5 +1,3 @@
-
-
 def sign_in
   visit '/'
   click_on 'Login'

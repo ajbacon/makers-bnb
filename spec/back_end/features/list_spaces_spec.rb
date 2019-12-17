@@ -1,8 +1,9 @@
 feature 'list spaces' do
   scenario 'an authenticated user can list a space' do
-    sign_up
+    User.create({ email: 'abacon@test.com', password: 'pass1' })
     sign_in
 
+    expect(page).to have_current_path '/spaces'
     click_button 'List a Space'
     expect(page).to have_current_path '/spaces/new'
 
@@ -10,7 +11,7 @@ feature 'list spaces' do
     fill_in 'description', with: 'Spacious house in a quiet location'
     fill_in 'price-per-night', with: '150'
     fill_in 'available-from', with: '12/01/19'
-    fill_in 'available-from', with: '19/01/19'
+    fill_in 'available-to', with: '19/01/19'
 
     click_button 'List my Space'
     expect(page).to have_current_path '/spaces'
