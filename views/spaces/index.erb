@@ -22,6 +22,7 @@
   </head>
 
   <body>
+  <a href="/requests">Requests</a>
     <h1>Book a Space</h1>
 
     <form action='/spaces/new' method='GET'>
@@ -30,9 +31,11 @@
 
     <ul>
       <% @spaces.each do |space| %>
-        <li class='space' id='space-<%= space.id %>'>
-          <h3><%= space.name %></h3>
-          <p><%= space.description %></p>
+        <li class='space'>
+          <a href="/spaces/<%= space.id %>" + id='space-<%= space.id %>'>
+            <h3><%= space.name %></h3>
+            <p><%= space.description %></p>
+          </a>
         </li>
       <% end %>
     </ul>

@@ -1,6 +1,6 @@
 feature 'list spaces' do
   scenario 'an authenticated user can list a space' do
-    User.create({ email: 'abacon@test.com', password: 'pass1' })
+    create_user
     sign_in
 
     expect(page).to have_current_path '/spaces'

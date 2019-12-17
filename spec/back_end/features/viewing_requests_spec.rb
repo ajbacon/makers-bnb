@@ -1,0 +1,11 @@
+feature 'viewing requests' do
+  scenario 'a user wants to view their requests' do
+    create_user
+    sign_in
+    click_on 'Requests'
+
+    expect(page).to have_current_path '/requests'
+    expect(page).to have_content "Requests I've made"
+    expect(page).to have_content "Requests I've received"
+  end
+end
