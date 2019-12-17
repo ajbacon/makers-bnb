@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require_relative './lib/space'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')
 
@@ -28,12 +29,22 @@ class MakersBnB < Sinatra::Base
     session[:email] = params['email']
     session[:password] = params['password']
     'authenticate'
-    redirect '/'
+    redirect '/spaces'
   end
 
   get '/spaces' do
+    @spaces = Space.all
     erb :'spaces/index'
   end 
+
+  get '/spaces/new' do
+    erb :'spaces/new'
+  end
+
+  post '/spaces' do
+    @space = Space.create(name: params[:name], description: params[:description], price_per_night: params[:'price-per-night'])
+    redirect '/spaces'
+  end
 
   run! if app_file == $0
 end

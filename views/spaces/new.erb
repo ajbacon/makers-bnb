@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New Space</title>
+</head>
+<body>
+  
+  <h1>List a Space</h1>
+
+  <form action='/spaces' method='POST'>
+    <label for="name">Name</label>
+    <input type='text' name='name'>
+
+    <label for='description'>Description</label>
+    <input type='text' name='description'>
+
+    <label for='price-per-night'>Price per night (£)</label>
+    <input type='text' name='price-per-night'>
+
+    <label for='available-from'>Available from (DD/MM/YY)</label>
+    <input type='text' name='available-from'>
+
+    <label for='available-to'>Available to (DD/MM/YY)</label>
+    <input type='text' name='available-to'>
+
+    <input type='submit' value='List my Space'>
+  </form>
+
+</body>
+</html>
