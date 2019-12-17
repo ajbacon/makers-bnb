@@ -1,6 +1,7 @@
 <h1> Log in MakersBnB </h1> 
 
-<form action='/sessions' method='POST'>
+<form action='/sessions/new' method='POST'>
+<% unless @valid %> <span> Invalid email address or password </span> <% end%> 
   <label for='Email Address'>Email Address</label>
   <input type='Text' name='email address' id='Email Address'>
   <label for='Password'>Password</label>

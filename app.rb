@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require_relative 'lib/user'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')
 
@@ -11,28 +12,23 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/' do
-    # @email = session[:email]
-    # @password = session[:password]
     erb :index
   end
 
   get '/sessions/new' do
+    @valid = session[:valid]
     erb :'sessions/new'
   end 
 
-  get '/users/new' do
-    erb :'users/new'
+  post '/users/new' do
+    User.create({ email: params['email address'], password: params['password'] })
+    redirect '/spaces'
   end
 
-  post '/users' do
-    redirect '/'
-  end
-
-  
-  post '/sessions' do
-    session[:email] = params['email']
-    session[:password] = params['password']
-    'authenticate'
+  post '/sessions/new' do
+    user = User.where({ email: params['email address'], password: params['password'] }).first
+    redirect '/sessions/new' unless user
+    session[:valid] = true
     redirect '/spaces'
   end
 
