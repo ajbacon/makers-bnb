@@ -16,7 +16,6 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/sessions/new' do
-    @valid = session[:valid]
     erb :'sessions/new'
   end 
 
@@ -28,7 +27,6 @@ class MakersBnB < Sinatra::Base
   post '/sessions/new' do
     user = User.where({ email: params['email address'], password: params['password'] }).first
     redirect '/sessions/new' unless user
-    session[:valid] = true
     redirect '/spaces'
   end
 

@@ -24,7 +24,6 @@ feature 'sign in' do
     fill_in 'Password', with: 'notpass1'
     click_on 'Log in'
 
-    expect(page).to have_content 'Invalid email address or password'
     expect(page).to have_current_path '/sessions/new'
   end
 end
