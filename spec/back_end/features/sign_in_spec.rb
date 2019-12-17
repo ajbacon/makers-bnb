@@ -25,6 +25,7 @@ feature 'sign in' do
     click_on 'Log in'
 
     expect(page).to have_current_path '/sessions/new'
+    expect(page).to have_content 'Please check your email or password'
   end
 
   scenario 'a user fails to sign in because of wrong password' do
@@ -35,5 +36,6 @@ feature 'sign in' do
     click_on 'Log in'
 
     expect(page).to have_current_path '/sessions/new'
+    expect(page).to have_content 'Please check your email or password'
   end
 end
