@@ -13,6 +13,7 @@ class MakersBnB < Sinatra::Base
 
   configure do
     enable :sessions
+    register Sinatra::Flash
   end
 
   get '/' do
@@ -31,10 +32,13 @@ class MakersBnB < Sinatra::Base
 
   post '/sessions/new' do
     user = User.where({ email: params['email address'] }).first
-    redirect '/sessions/new' unless user
-    redirect '/sessions/new' unless BCrypt::Password.new(user.password) == params[:password]
-
-    redirect '/spaces'
+    if user && BCrypt::Password.new(user.password) == params[:password]
+      session[:user_id] = user.id
+      redirect '/spaces'
+    else
+      flash[:notice] = 'Please check your email or password'
+      redirect '/sessions/new'
+    end
   end
 
   get '/spaces' do
