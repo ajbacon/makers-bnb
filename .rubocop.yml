@@ -102,7 +102,7 @@ NilComparison:
 Not:
   Enabled: true
 NumericLiterals:
-  Enabled: true
+  Enabled: false
 NumericPredicate:
   Enabled: true
 OneLineConditional:
@@ -165,7 +165,7 @@ SpaceInsideStringInterpolation:
   Enabled: true
 SymbolLiteral:
   Enabled: true
-TrailingBlankLines:
+TrailingEmptyLines:
   Enabled: true
 TrivialAccessors:
   Enabled: true
@@ -175,11 +175,11 @@ AccessModifierIndentation:
   Enabled: false
 Alias:
   Enabled: false
-AlignArray:
+ArrayAlignment:
   Enabled: false
-AlignHash:
+HashAlignment:
   Enabled: false
-AlignParameters:
+ParameterAlignment:
   Enabled: false
 AndOr:
   Enabled: false
@@ -287,7 +287,7 @@ FirstMethodArgumentLineBreak:
   Enabled: false
 FirstMethodParameterLineBreak:
   Enabled: false
-Layout/IndentFirstArgument:
+Layout/FirstArgumentIndentation:
   Enabled: false
 FlipFlop:
   Enabled: false
@@ -311,13 +311,13 @@ IfWithSemicolon:
   Enabled: false
 ImplicitRuntimeError:
   Enabled: false
-IndentFirstArrayElement:
+FirstArrayElementIndentation:
   Enabled: false
-IndentAssignment:
+AssignmentIndentation:
   Enabled: false
-IndentFirstHashElement:
+FirstHashElementIndentation:
   Enabled: false
-IndentHeredoc:
+HeredocIndentation:
   Enabled: false
 InfiniteLoop:
   Enabled: false
@@ -467,11 +467,11 @@ TrailingWhitespace:
   Enabled: false
 UnlessElse:
   Enabled: false
-UnneededCapitalW:
+RedundantCapitalW:
   Enabled: false
-UnneededInterpolation:
+RedundantInterpolation:
   Enabled: false
-UnneededPercentQ:
+RedundantPercentQ:
   Enabled: false
 VariableInterpolation:
   Enabled: false

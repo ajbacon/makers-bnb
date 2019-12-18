@@ -28,7 +28,6 @@ def test_space
   Space.where(name: 'BIG HOUSE').first
 end
 
-
 def sign_up_user_2
   visit '/'
   fill_in 'email address', with: 'tuna@test.com'

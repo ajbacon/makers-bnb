@@ -1,11 +1,10 @@
+require 'bcrypt'
 require 'sinatra'
 require 'sinatra/activerecord'
-
 require 'sinatra/flash'
 require_relative 'lib/user'
 require_relative 'lib/space'
 require_relative 'lib/request'
-require 'bcrypt'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')
 
@@ -54,7 +53,12 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     user = User.find(session[:user_id])
-    user.spaces.create(name: params[:name], description: params[:description], price_per_night: params[:'price-per-night'])
+    user.spaces.create({
+      name: params[:name], 
+      description: params[:description], 
+      price_per_night: params[:'price-per-night']
+    })
+
     redirect '/spaces'
   end
 
@@ -66,7 +70,12 @@ class MakersBnB < Sinatra::Base
 
   post '/requests' do
     user = User.find(session[:user_id])
-    user.requests.create({ date_requested: params['requested-date'], space_id: session[:space_id], status: "Pending" })
+    user.requests.create({ 
+      date_requested: params['requested-date'], 
+      space_id: session[:space_id], 
+      status: "Pending" 
+    })
+
     redirect '/requests'
   end
 

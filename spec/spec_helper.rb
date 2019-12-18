@@ -1,9 +1,11 @@
 require 'simplecov'
 require 'simplecov-console'
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # SimpleCov::Formatter::HTMLFormatter
 ])
+
 SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
@@ -15,18 +17,23 @@ require 'rspec'
 require 'sinatra/activerecord'
 require_relative '../app'
 require_relative 'back_end/features/web_helpers.rb'
+
 Capybara.app = MakersBnB
 
 RSpec.configure do |config|
   config.before(:each) do
     ActiveRecord::Base.connection.execute('TRUNCATE users, spaces, requests')
   end
-  config.backtrace_exclusion_patterns=[/gems/]
+
+  config.backtrace_exclusion_patterns = /gems/
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
+
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
+
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end
