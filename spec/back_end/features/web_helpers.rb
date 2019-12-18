@@ -44,3 +44,9 @@ def sign_in_user_2
   fill_in 'Password', with: '12345'
   click_on 'Log in'
 end
+
+def request_space
+  click_on "space-#{test_space.id}"
+  fill_in 'requested-date', with: '12122020'
+  click_on 'Request to Book'
+end

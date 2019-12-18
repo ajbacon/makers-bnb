@@ -66,7 +66,7 @@ class MakersBnB < Sinatra::Base
 
   post '/requests' do
     user = User.find(session[:user_id])
-    user.requests.create({ date_requested: params['requested-date'], space_id: session[:space_id] })
+    user.requests.create({ date_requested: params['requested-date'], space_id: session[:space_id], status: "Pending" })
     redirect '/requests'
   end
 
