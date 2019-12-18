@@ -1,5 +1,9 @@
-def create_user
-  User.create({ email: 'abacon@test.com', password: 'pass1' })
+def sign_up
+  visit '/'
+  fill_in 'email address', with: 'abacon@test.com'
+  fill_in 'password', with: 'pass1'
+  fill_in 'password confirmation', with: 'pass1'
+  click_on 'Sign up'
 end
 
 def sign_in

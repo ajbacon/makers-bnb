@@ -5,6 +5,7 @@ require 'sinatra/flash'
 require_relative 'lib/user'
 require_relative 'lib/space'
 require_relative 'lib/request'
+require 'bcrypt'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')
 
@@ -13,6 +14,7 @@ class MakersBnB < Sinatra::Base
 
   configure do
     enable :sessions
+    register Sinatra::Flash
   end
 
   get '/' do
@@ -24,15 +26,21 @@ class MakersBnB < Sinatra::Base
   end 
 
   post '/users/new' do
-    User.create({ email: params['email address'], password: params['password'] })
+    encrypted_password = BCrypt::Password.create(params[:password])
+    user = User.create({ email: params['email address'], password: encrypted_password })
+    session[:user_id] = user.id
     redirect '/spaces'
   end
 
   post '/sessions/new' do
-    session[:user] = User.where({ email: params['email address'], password: params['password'] }).first
-    redirect '/sessions/new' unless session[:user]
-
-    redirect '/spaces'
+    user = User.where({ email: params['email address'] }).first
+    if user && BCrypt::Password.new(user.password) == params[:password]
+      session[:user_id] = user.id
+      redirect '/spaces'
+    else
+      flash[:notice] = 'Please check your email or password'
+      redirect '/sessions/new'
+    end
   end
 
   get '/spaces' do
@@ -45,26 +53,25 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(name: params[:name], user_id: session[:user].id, description: params[:description], price_per_night: params[:'price-per-night'])
+    user = User.find(session[:user_id])
+    user.spaces.create(name: params[:name], description: params[:description], price_per_night: params[:'price-per-night'])
     redirect '/spaces'
   end
 
   get '/spaces/:id' do
-    p params[:id]
-    session[:space] = Space.find(params[:id])
-    @space = session[:space]
+    @space = Space.find(params[:id])
+    session[:space_id] = @space.id
     erb :'spaces/profile'
   end
 
   post '/requests' do
-    Request.create({ user_id: session[:user].id, date_requested: params['requested-date'], space_id: session[:space].id })
+    user = User.find(session[:user_id])
+    user.requests.create({ date_requested: params['requested-date'], space_id: session[:space_id] })
     redirect '/requests'
   end
 
   get '/requests' do
-    p 'this is session user', session[:user]
-    p 'this is arequest', @requests = Request.where(user_id: session[:user].id)
-    # p 'this is a space', @space = Space.where({ user_id: @found_request.user_id })
+    @requests = Request.where(user_id: session[:user_id])
     erb :'requests/index'
   end
 

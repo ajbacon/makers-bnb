@@ -1,5 +1,4 @@
 feature 'sign in' do
-  before(:each) {User.create( email: 'abacon@test.com', password: 'pass1')}
 
   scenario 'a user clicks on the Log in button on home page' do
     visit '/'
@@ -10,14 +9,26 @@ feature 'sign in' do
     expect(page).to have_content 'Password'
   end
 
-  scenario 'a user signs up' do
+  scenario 'a user sucessfully signs in' do
+    sign_up
     sign_in
 
     expect(page).to have_content 'Book a Space'
     expect(page).to have_current_path '/spaces'
   end
 
-  scenario 'a user fails to sign in' do
+  scenario 'a user fails to sign in because of wrong email address' do
+    visit '/'
+    click_on 'Login'
+    fill_in 'Email Address', with: 'wrong@test.com'
+    fill_in 'Password', with: 'pass1'
+    click_on 'Log in'
+
+    expect(page).to have_current_path '/sessions/new'
+    expect(page).to have_content 'Please check your email or password'
+  end
+
+  scenario 'a user fails to sign in because of wrong password' do
     visit '/'
     click_on 'Login'
     fill_in 'Email Address', with: 'abacon@test.com'
@@ -25,5 +36,6 @@ feature 'sign in' do
     click_on 'Log in'
 
     expect(page).to have_current_path '/sessions/new'
+    expect(page).to have_content 'Please check your email or password'
   end
 end

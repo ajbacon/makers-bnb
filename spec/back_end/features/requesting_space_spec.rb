@@ -1,6 +1,6 @@
 feature 'requesting a space' do
   scenario 'a user requests a space' do
-    create_user
+    sign_up
     sign_in
 
     list_test_space
