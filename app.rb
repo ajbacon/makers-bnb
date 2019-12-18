@@ -71,7 +71,12 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/requests' do
-    @requests = Request.where(user_id: session[:user_id])
+    @requests_made = Request.where(user_id: session[:user_id])
+    @requests_received = Request.all.select { |request| 
+      space = Space.find(request.space_id)
+      user = User.find(space.user_id)
+      user.id == session[:user_id]
+    }
     erb :'requests/index'
   end
 

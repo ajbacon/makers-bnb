@@ -1,5 +1,5 @@
-feature 'viewing requests' do
-  scenario 'a user wants to view their requests' do
+feature 'view made requests' do
+  scenario 'a user can view made requests' do
     sign_up
     sign_in
     list_test_space
