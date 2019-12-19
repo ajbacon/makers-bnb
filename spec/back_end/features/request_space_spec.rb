@@ -13,4 +13,18 @@ feature 'requesting a space' do
     expect(page).to have_current_path '/requests'
     expect(page).to have_content test_space.name
   end
+
+  scenario 'a user is unable to create a request if not signed in' do
+    sign_up
+    list_test_space
+    click_on 'Sign out'
+
+    visit '/spaces'
+    click_on 'BIG HOUSE'
+    fill_in 'requested-date', with: '12122020'
+    click_on 'Request to Book'
+
+    expect(page).to have_current_path '/'
+    expect(page).to have_content 'Please log in or sign up to request a space'
+  end
 end
