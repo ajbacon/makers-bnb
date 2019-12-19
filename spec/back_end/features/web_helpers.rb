@@ -36,14 +36,6 @@ def sign_up_user_2
   click_on 'Sign up'
 end
 
-def sign_in_user_2
-  visit '/'
-  click_on 'Login'
-  fill_in 'Email Address', with: 'tuna@test.com'
-  fill_in 'Password', with: '12345'
-  click_on 'Log in'
-end
-
 def request_space
   click_on "space-#{test_space.id}"
   fill_in 'requested-date', with: '12122020'
