@@ -48,7 +48,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/new' do
-    if !session[:user_id]
+    unless session[:user_id]
       flash[:notice] = 'Please log in or sign up to list a space'
       redirect '/'
     end
@@ -57,11 +57,9 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     user = User.find(session[:user_id])
-    user.spaces.create({
-      name: params[:name], 
-      description: params[:description], 
-      price_per_night: params[:'price-per-night']
-    })
+    user.spaces.create({ name: params[:name], 
+                         description: params[:description], 
+                         price_per_night: params[:'price-per-night'] })
 
     redirect '/spaces'
   end
@@ -73,16 +71,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/requests' do
-    if !session[:user_id]
+    unless session[:user_id]
       flash[:notice] = 'Please log in or sign up to request a space'
       redirect '/'
     end
     user = User.find(session[:user_id])
-    user.requests.create({ 
-      date_requested: params['requested-date'], 
-      space_id: session[:space_id], 
-      status: "Pending" 
-    })
+    user.requests.create({ date_requested: params['requested-date'], 
+                           space_id: session[:space_id], 
+                           status: "Pending" })
 
     redirect '/requests'
   end
