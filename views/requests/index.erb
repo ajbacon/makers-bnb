@@ -23,8 +23,11 @@
       <h2>Requests I've received</h2>
         <% @requests_received.each do |request| %>
           <li class='request'>
-          <h3><%= Space.find(request.space_id).name %></h3>
-          <h3><%= request.date_requested %></h3>
+            <a href='/requests/<%= request.id %>' + id='request-<%= request.id %>'>
+              <h3><%= Space.find(request.space_id).name %></h3>
+            </a>
+            <p><%= request.status %></p>
+            <p><%= request.date_requested %></p>
           </li>
         <% end %>
     </div>

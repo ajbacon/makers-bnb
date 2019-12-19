@@ -12,7 +12,7 @@ class MakersBnB < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   configure do
-    enable :sessions
+    enable :sessions, :method_override
     register Sinatra::Flash
   end
 
@@ -93,6 +93,18 @@ class MakersBnB < Sinatra::Base
     session.clear
     flash[:notice] = 'You have signed out'
     redirect '/'
+  end
+
+  get '/requests/:id' do
+    @booking = Request.find(params[:id]) # We called it booking because we can't use "request"
+    @user_from = User.find(@booking.user_id)
+    erb :'requests/profile'
+  end
+
+  patch '/requests/:id' do
+    status = params.keys.include?('confirm') ? 'Confirmed' : 'Declined'
+    Request.update(params[:id], status: status)
+    redirect '/requests'
   end
 
   run! if app_file == $0

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+  </head>
+
+  <body>
+  <h2>From: <%= @user_from.email %></h2>
+  <h2>Date: <%= @booking.date_requested %></h2>
+
+  <form action='/requests/<%= @booking.id %>' method='POST'>
+    <input type='hidden' name='_method' value='PATCH'>
+    <input type='submit' name='confirm' value='Confirm request from: <%= @user_from.email %>'>
+    <input type='submit' name='decline' value='Decline request from: <%= @user_from.email %>'>
+  </form>
+  </body>
+
+</html>

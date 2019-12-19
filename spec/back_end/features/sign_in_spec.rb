@@ -11,7 +11,6 @@ feature 'sign in' do
 
   scenario 'a user sucessfully signs in' do
     sign_up
-    sign_in
 
     expect(page).to have_content 'Book a Space'
     expect(page).to have_current_path '/spaces'

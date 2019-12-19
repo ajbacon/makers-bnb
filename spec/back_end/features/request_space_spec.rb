@@ -1,7 +1,6 @@
 feature 'requesting a space' do
   scenario 'a user requests a space' do
     sign_up
-    sign_in
     list_test_space
     click_on "space-#{test_space.id}"
 
@@ -11,7 +10,9 @@ feature 'requesting a space' do
     click_on 'Request to Book'
 
     expect(page).to have_current_path '/requests'
-    expect(page).to have_content test_space.name
+    expect(page).to have_content 'BIG HOUSE'
+    expect(page).to have_content 'Pending'
+    expect(page).to have_content '12122020'
   end
 
   scenario 'a user is unable to create a request if not signed in' do
