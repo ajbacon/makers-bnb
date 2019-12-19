@@ -5,6 +5,7 @@ require 'sinatra/flash'
 require_relative 'lib/user'
 require_relative 'lib/space'
 require_relative 'lib/request'
+require_relative 'lib/date_helper'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')
 
@@ -56,7 +57,9 @@ class MakersBnB < Sinatra::Base
     user.spaces.create({
       name: params[:name], 
       description: params[:description], 
-      price_per_night: params[:'price-per-night']
+      price_per_night: params[:'price-per-night'],
+      available_from: to_date(params[:'available-from']),
+      available_to: to_date(params[:'available-to']),
     })
 
     redirect '/spaces'
@@ -64,6 +67,10 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @space = Space.find(params[:id])
+    @available_range_of_dates = { 
+      available_from: @space.available_from, 
+      available_to: @space.available_to
+    }
     session[:space_id] = @space.id
     erb :'spaces/profile'
   end

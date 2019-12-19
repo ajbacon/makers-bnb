@@ -14,13 +14,21 @@ def sign_in
   click_on 'Log in'
 end
 
+def one_week
+  604800 # in seconds
+end
+
+def one_day
+  86400 # in seconds
+end
+
 def list_test_space
   click_on 'List a Space'
   fill_in 'name', with: 'BIG HOUSE'
   fill_in 'description', with: "it's big.."
   fill_in 'price-per-night', with: '500'
-  fill_in 'available-from', with: '01012020'
-  fill_in 'available-to', with: '12122020'
+  page.find('#available-from').set((Time.now + one_day).strftime('%Y-%m-%d')) # tomorrow
+  page.find('#available-to').set((Time.now + one_week + one_day).strftime('%Y-%m-%d')) # 1 week and 1 day from today
   click_on 'List my Space'
 end
 
