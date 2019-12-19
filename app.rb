@@ -73,6 +73,10 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/requests' do
+    if !session[:user_id]
+      flash[:notice] = 'Please log in or sign up to request a space'
+      redirect '/'
+    end
     user = User.find(session[:user_id])
     user.requests.create({ 
       date_requested: params['requested-date'], 
