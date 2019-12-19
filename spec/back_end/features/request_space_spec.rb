@@ -1,7 +1,6 @@
 feature 'requesting a space' do
   scenario 'a user requests a space' do
     sign_up
-    sign_in
     list_test_space
     click_on "space-#{test_space.id}"
 

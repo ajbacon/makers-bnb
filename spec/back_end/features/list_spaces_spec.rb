@@ -1,7 +1,6 @@
 feature 'list spaces' do
   scenario 'an authenticated user can list a space' do
     sign_up
-    sign_in
 
     expect(page).to have_current_path '/spaces'
     

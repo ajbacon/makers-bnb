@@ -96,14 +96,14 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/requests/:id' do
-    @booking = Request.find(params[:id]) # We called it booking because we can't use "request" (we will need to change the table name to Booking at some point)
+    @booking = Request.find(params[:id]) # We called it booking because we can't use "request"
     @user_from = User.find(@booking.user_id)
-    session[:booking_id] = @booking.id
     erb :'requests/profile'
   end
 
-  patch '/requests' do
-    Request.update(session[:booking_id], status: "Confirmed")
+  patch '/requests/:id' do
+    status = params.keys.include?('confirm') ? 'Confirmed' : 'Declined'
+    Request.update(params[:id], status: status)
     redirect '/requests'
   end
 
