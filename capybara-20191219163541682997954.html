@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,15 +10,15 @@
   </head>
   <body>
   <p id="nameee">my name..</p>
-    <%= @space.description %>
+    it's big..
     <form action="/requests" method="POST" autocomplete="off">
       <label for="requested-date">
-      <input type="text" name="requested-date" id="requested-date" required><span><i id='a-btn' class="glyphicon glyphicon-th"></i></span>
+      <input type="text" name="requested-date" id="requested-date" required="" style=""><span><i id="a-btn" class="glyphicon glyphicon-th"></i></span>
       <input type="submit" value="Request to Book">
-    </form>
+    
 
-    <span id="available-from" style="visibility: hidden"><%= @available_range_of_dates[:available_from] %></span>
-    <span id="available-to" style="visibility: hidden"><%= @available_range_of_dates[:available_to] %></span>
+    <span id="available-from" style="visibility: hidden">//</span>
+    <span id="available-to" style="visibility: hidden">//</span>
 
 
 
@@ -47,5 +45,5 @@
       
       });
     </script>
-  </body>
-</html>
+  
+</label></form></body></html>

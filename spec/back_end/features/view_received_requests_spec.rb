@@ -5,7 +5,8 @@ feature 'view received requests' do
     click_on "Sign out"
 
     sign_up_user_2
-    click_on 'BIG HOUSE'
+    # click on the first listed space
+    find('.space', match: :first).click
     fill_in 'requested-date', with: '12/04/2019'
     click_on 'Request to Book'
     # log out (nav bar functionality to implement)

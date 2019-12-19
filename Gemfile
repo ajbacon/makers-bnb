@@ -13,3 +13,5 @@ gem 'simplecov-console', require: false
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'sinatra-flash'
+gem 'launchy'
+gem 'selenium-webdriver'
