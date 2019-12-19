@@ -7,7 +7,7 @@ feature 'list spaces' do
     list_test_space
 
     expect(page).to have_current_path '/spaces'
-    expect(page).to have_content 'BIG HOUSE'
+    expect(page).to have_selector(:link_or_button, 'BIG HOUSE')
     expect(page).to have_content "it's big.."
   end  
 

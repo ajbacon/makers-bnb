@@ -13,7 +13,7 @@ feature 'view received requests' do
 
     sign_in
     click_on 'Requests'
-    expect(page).to have_content 'BIG HOUSE'
+    expect(page).to have_selector(:link_or_button, 'BIG HOUSE')
     expect(page).to have_content '12/04/2019'
   end 
 end

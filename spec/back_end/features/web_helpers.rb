@@ -46,7 +46,7 @@ end
 
 def request_space
   # click on the first listed space
-  find('.space', match: :first).click
+  click_on 'BIG HOUSE'
   fill_in 'requested-date', with: '12122020'
   click_on 'Request to Book'
 end
