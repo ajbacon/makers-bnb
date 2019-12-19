@@ -45,9 +45,13 @@ class MakersBnB < Sinatra::Base
   get '/spaces' do
     @spaces = Space.all
     erb :'spaces/index'
-  end 
+  end
 
   get '/spaces/new' do
+    if !session[:user_id]
+      flash[:notice] = 'Please log in or sign up to list a space'
+      redirect '/'
+    end
     erb :'spaces/new'
   end
 
@@ -83,6 +87,12 @@ class MakersBnB < Sinatra::Base
     @requests_made = Request.where(user_id: session[:user_id])
     @requests_received = Request.get_received_requests(session[:user_id])
     erb :'requests/index'
+  end
+
+  post '/sessions/destroy' do
+    session.clear
+    flash[:notice] = 'You have signed out'
+    redirect '/'
   end
 
   run! if app_file == $0
