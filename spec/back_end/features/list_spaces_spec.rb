@@ -14,6 +14,7 @@ feature 'list spaces' do
   scenario 'a user cannot list a space if not signed in' do
     visit '/spaces'
     click_on 'List a Space'
+    
     expect(page).to have_current_path '/'
     expect(page).to have_content 'Please log in or sign up to list a space'
   end
@@ -23,6 +24,7 @@ feature 'list spaces' do
     click_on 'Sign out'
     click_on 'View Listings'
     click_on 'List a Space'
+
     expect(page).to have_current_path '/'
     expect(page).to have_content 'Please log in or sign up to list a space'
   end
