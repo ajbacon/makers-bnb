@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <style>
       * {
         padding: 0;
@@ -22,17 +22,24 @@
   </head>
 
   <body>
-    <a href="/requests">Requests</a>
+    <form action='/requests' method='GET'>
+      <input type='submit' value='Requests'>
+    </form>
+
+    <form action='/sessions/destroy' method='POST'>
+      <input type='submit' value='Sign out'>
+    </form>
+
     <h1>Book a Space</h1>
 
     <form action='/spaces/new' method='GET'>
-      <input type="submit" value='List a Space'>
+      <input type='submit' value='List a Space'>
     </form>
 
     <ul>
       <% @spaces.each do |space| %>
         <li class='space'>
-          <a href="/spaces/<%= space.id %>" + id='space-<%= space.id %>'>
+          <a href='/spaces/<%= space.id %>' + id='space-<%= space.id %>'>
             <h3><%= space.name %></h3>
           </a>
           <p><%= space.description %></p>
