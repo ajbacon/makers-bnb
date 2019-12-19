@@ -3,7 +3,7 @@ feature 'requesting a space' do
     sign_up
     sign_in
     list_test_space
-    click_on "space-#{test_space.id}"
+    find('.space', match: :first).click
 
     expect(page).to have_content test_space.description
     

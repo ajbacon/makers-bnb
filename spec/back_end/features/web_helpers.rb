@@ -45,7 +45,8 @@ def sign_in_user_2
 end
 
 def request_space
-  click_on "space-#{test_space.id}"
+  # click on the first listed space
+  find('.space', match: :first).click
   fill_in 'requested-date', with: '12122020'
   click_on 'Request to Book'
 end

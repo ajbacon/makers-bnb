@@ -17,8 +17,7 @@
     <%= @space.description %>
     <form action="/requests" method="POST" autocomplete="off">
       <label for="requested-date">
-      <input type="text" name="requested-date" id="requested-date">
-      
+      <input type="text" name="requested-date" id="requested-date"><span><i id='a-btn' class="glyphicon glyphicon-th"></i></span>
       <input type="submit" value="Request to Book">
     </form>
 
@@ -34,6 +33,9 @@
           startDate: "today",
           // endDate: "27/12/2019",
           autoclose: true,
+          forceParse: false,
+          disableEntry: true,
+          clearBtn: true,
           datesDisabled: ['20/12/2019', '21/12/2019', '25/12/2019']
         });
       

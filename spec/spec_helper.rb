@@ -20,6 +20,9 @@ require_relative 'back_end/features/web_helpers.rb'
 
 Capybara.app = MakersBnB
 
+Capybara.default_driver = :selenium
+Capybara.server = :webrick
+
 RSpec.configure do |config|
   config.before(:each) do
     ActiveRecord::Base.connection.execute('TRUNCATE users, spaces, requests')
