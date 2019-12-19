@@ -39,9 +39,9 @@
     <ul>
       <% @spaces.each do |space| %>
         <li class='space'>
-          <a href='/spaces/<%= space.id %>' + id='space-<%= space.id %>'>
-            <h3><%= space.name %></h3>
-          </a>
+        <form action="/spaces/<%= space.id %>">
+          <input type="submit" value='<%= space.name %>'>
+        </form>
           <p><%= space.description %></p>
         </li>
       <% end %>

@@ -2,7 +2,7 @@ feature 'requesting a space' do
   scenario 'a user requests a space' do
     sign_up
     list_test_space
-    find('.space', match: :first).click
+    click_on 'BIG HOUSE'
 
     expect(page).to have_content test_space.description
     
