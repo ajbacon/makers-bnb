@@ -4,9 +4,8 @@ feature 'viewing available dates' do
     sign_in
     list_test_space
     sign_up_user_2
-    sign_in_user_2
     # click on the first listed space
-    find('.space', match: :first).click
+    click_on 'BIG HOUSE'
     find('#requested-date').click
 
     tomorrow = first('.day') { |day| !day[:class].split.include? 'disabled' }
@@ -22,8 +21,7 @@ feature 'viewing available dates' do
     sign_in
     list_test_space
     sign_up_user_2
-    sign_in_user_2
-    find('.space', match: :first).click
+    click_on 'BIG HOUSE'
     find('#requested-date').click
 
     a_day = 1
@@ -42,8 +40,7 @@ feature 'viewing available dates' do
     sign_in
     list_test_space
     sign_up_user_2
-    sign_in_user_2
-    find('.space', match: :first).click
+    click_on 'BIG HOUSE'
     find('#requested-date').click
 
     a_week = 7
