@@ -9,24 +9,24 @@
   <body>
     <h1>Feel at home, anywhere</h1>
     <h2><%= flash[:notice] %></h2>
+
     <a href='/sessions/new'> Login</a>
 
-  <form action='/users/new' method='POST'>
-    <label for='Email Address'>Email Address</label>
-    <input type='Text' name='email address' id='Email Address'>
+    <form action='/users/new' method='POST'>
+      <label for='Email Address'>Email Address</label>
+      <input type='Text' name='email address' id='Email Address'>
 
-    <label for='Password'>Password</label>
-    <input type='password' name='password' id='Password'>
+      <label for='Password'>Password</label>
+      <input type='password' name='password' id='Password'>
 
-    <label for='Password confirmation'>Password confirmation</label>
-    <input type='password' name='password confirmation' id='Password confirmation'>
+      <label for='Password confirmation'>Password confirmation</label>
+      <input type='password' name='password confirmation' id='Password confirmation'>
 
-    <input type='submit' value='Sign up'> 
-  </form>
+      <input type='submit' value='Sign up'> 
+    </form>
 
     <form action='/spaces' method='GET'>
       <input type='submit' value='View Listings'>
     </form>
-
   </body>
 </html>

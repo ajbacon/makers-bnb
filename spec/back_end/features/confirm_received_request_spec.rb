@@ -2,7 +2,7 @@ feature 'confirm received requests' do
   scenario 'a user can confirm received requests' do
     sign_up
     list_test_space
-    click_on "Sign out"
+    click_on 'Sign out'
 
     sign_up_user_2
     click_on 'BIG HOUSE'
@@ -13,6 +13,7 @@ feature 'confirm received requests' do
     sign_in
     click_on 'Requests'
     click_on 'BIG HOUSE'
+    
     expect(page).to have_content 'From: tuna@test.com'
     expect(page).to have_content 'Date: 12/04/2019'
 

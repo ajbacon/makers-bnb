@@ -4,14 +4,14 @@ feature 'viewing available dates' do
     sign_in
     list_test_space
     sign_up_user_2
-    # click on the first listed space
     click_on 'BIG HOUSE'
     find('#requested-date').click
 
     tomorrow = first('.day') { |day| !day[:class].split.include? 'disabled' }
     tomorrow.click
-    date_of_tomorrow = (Time.now + one_day).strftime('%d/%m/%Y')
     click_on 'Request to Book'
+
+    date_of_tomorrow = (Time.now + one_day).strftime('%d/%m/%Y')
     
     expect(page).to have_content date_of_tomorrow
   end

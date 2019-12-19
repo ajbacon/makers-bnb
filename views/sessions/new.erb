@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1> Log in MakersBnB </h1> 
-  <h2><%= flash[:notice] %></h2>
-  <form action='/sessions/new' method='POST'>
-    <label for='Email Address'>Email Address</label>
-    <input type='Text' name='email address' id='Email Address'>
-    <label for='Password'>Password</label>
-    <input type='password' name='password' id='Password'>
-    <input type='submit' value='Log in'> 
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1> Log in MakersBnB </h1> 
+    <h2><%= flash[:notice] %></h2>
+
+    <form action='/sessions/new' method='POST'>
+      <label for='Email Address'>Email Address</label>
+      <input type='Text' name='email address' id='Email Address'>
+
+      <label for='Password'>Password</label>
+      <input type='password' name='password' id='Password'>
+      
+      <input type='submit' value='Log in'> 
+    </form>
+  </body>
 </html>
