@@ -63,6 +63,7 @@ feature 'confirm received requests' do
     # log out (nav bar functionality to implement)
 
     sign_in_user_3
+    expect(page).to have_current_path('/spaces')
     click_on 'Requests'
 
     expect(page).to have_content 'BIG HOUSE'

@@ -68,21 +68,6 @@ def test_space
   Space.where(name: 'BIG HOUSE').first
 end
 
-def sign_up_user_2
-  visit '/'
-  fill_in 'email address', with: 'tuna@test.com'
-  fill_in 'password', with: '12345'
-  fill_in 'password confirmation', with: '12345'
-  click_on 'Sign up'
-end
-
-def sign_up_user_3
-  visit '/'
-  fill_in 'email address', with: 'user3@test.com'
-  fill_in 'password', with: '12345'
-  fill_in 'password confirmation', with: '12345'
-  click_on 'Sign up'
-end
 
 def request_space
   # click on the first listed space

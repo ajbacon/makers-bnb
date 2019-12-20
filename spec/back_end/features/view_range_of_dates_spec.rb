@@ -1,7 +1,7 @@
 feature 'viewing available dates' do
   scenario 'a user can select an available date' do
     sign_up
-    sign_in
+
     list_test_space
     sign_up_user_2
     click_on 'BIG HOUSE'
@@ -18,7 +18,7 @@ feature 'viewing available dates' do
 
   scenario 'a user cannot select a date before the available range' do
     sign_up
-    sign_in
+
     list_test_space
     sign_up_user_2
     click_on 'BIG HOUSE'
@@ -37,7 +37,7 @@ feature 'viewing available dates' do
 
   scenario 'a user cannot select a date after the available range' do
     sign_up
-    sign_in
+
     list_test_space
     sign_up_user_2
     click_on 'BIG HOUSE'
@@ -48,7 +48,7 @@ feature 'viewing available dates' do
     day_of_tomorrow = tomorrow.text
     a_week_tomorrow = first('.day') { |day| day.text == (day_of_tomorrow.to_i + a_week).to_s }
     a_week_tomorrow.click
-
+    sleep 5
     click_on 'Request to Book'
 
     expect(find('#requested-date').value).to eq ''
