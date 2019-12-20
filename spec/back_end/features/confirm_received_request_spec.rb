@@ -43,7 +43,7 @@ feature 'confirm received requests' do
     expect(page).not_to have_selector(:link_or_button, 'Decline request from: tuna@test.com')
   end
 
-  scenario 'after a user confirms a requests, all the others should be set as declined' do
+  scenario 'after a user confirms a requests, all the others with same date should be set as declined' do
     sign_up
     list_test_space
     click_on 'Sign out'
