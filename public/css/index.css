@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+  z-index: 9999;
+}
+
+#screen {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-image: url('../images/How-To-Easily-Create-The-Perfect-Minimalist-Living-Room-8.jpg');
+  background-size: cover;
+  opacity: 0.8;
+  backdrop-filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  z-index: 1;
+}
+
+input:focus {
+  outline: none;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 20px;
+  z-index: 9999;
+}
+
+#nav-left {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sign-up {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* background */
+#sign-up, nav {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#feel-at-home {
+  margin: 20px;
+  font-size: 43px;
+}
+
+#sign-up-to-makersbnb {
+  margin: 0 10px 10px 10px;
+}
+
+#form-wrapper {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+}
+
+#sign-up-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.sign-up-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  align-items: center;
+  width: 80%;
+  background: transparent;
+}
+
+#sign-up-btn {
+  width: 200px;
+  height: 90px;
+  border-radius: 10px;
+  font-size: 25px;
+  border: none;
+  color: rgb(153, 111, 56);
+  background: none;
+  border: 2px solid rgb(153, 111, 56);
+}
+
+label {
+  font-size: 25px;
+  background: transparent;
+  color: rgb(153, 111, 56);
+}
+
+#sign-up-form input[type="text"], #sign-up-form input[type="password"] {
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid rgb(153, 111, 56);
+  width: 100%;
+  background: transparent;
+  text-align: center;
+  font-size: 25px;
+}
+
+#view-listings-link, #login-link {
+  font-size: 20px;
+  background: transparent;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+#view-listings-link {
+  border: 1px solid;
+  border-color: transparent transparent transparent white;
+  cursor: pointer;
+}
+
+#login-link  {
+  border: 1px solid;
+  border-color: transparent white transparent transparent;
+}

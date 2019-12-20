@@ -72,7 +72,7 @@ class MakersBnB < Sinatra::Base
 
   get '/availability' do
     space = Space.find(session[:space_id])
-    confirmed_bookings = Request.where(space_id: session[:space_id], status: "Confirmed")
+    confirmed_bookings = Request.where(space_id: session[:space_id], status: "confirmed")
     confirmed_bookings = confirmed_bookings.map { |request| request.date_requested }
     response = { 
       available_from: space.available_from,

@@ -4,29 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
     <title>MakersBnB</title>
   </head>
   <body>
-    <h1>Feel at home, anywhere</h1>
-    <h2><%= flash[:notice] %></h2>
+  <div id="screen"></div>
+    <div id="content">
+      <nav>
+        <div id="nav-left">
+          <a href='/sessions/new' id="login-link"> Login</a>
+          <form action='/spaces' method='GET'>
+            <input type='submit' value='View Listings' id="view-listings-link">
+          </form>
+        </div>
+      </nav>
+      <div id="sign-up">
+        <div id="main">
+          <h1 id="feel-at-home">Feel at home, anywhere</h1>
+          <h2><%= flash[:notice] %></h2>
 
-    <a href='/sessions/new'> Login</a>
+          <div id="sign-up-to-makersbnb">Sign up to MakersBnB</div>
+          <div id="form-wrapper">
+            <form action='/users/new' method='POST' id="sign-up-form">
+              <div class="sign-up-field">
+                <div><label for='Email Address'>Email Address</label></div>
+                <input type='text' name='email address' id='Email Address' autocomplete="off" spellcheck="false">
+              </div>
 
-    <form action='/users/new' method='POST'>
-      <label for='Email Address'>Email Address</label>
-      <input type='Text' name='email address' id='Email Address'>
+              <div class="sign-up-field">
+                <div><label for='Password'>Password</label></div>
+                <input type='password' name='password' id='Password'>
+              </div>
 
-      <label for='Password'>Password</label>
-      <input type='password' name='password' id='Password'>
+              <div class="sign-up-field">
+                <div><label for='Password confirmation'>Password confirmation</label></div>
+                <input type='password' name='password confirmation' id='Password confirmation'>
+              </div>
 
-      <label for='Password confirmation'>Password confirmation</label>
-      <input type='password' name='password confirmation' id='Password confirmation'>
-
-      <input type='submit' value='Sign up'> 
-    </form>
-
-    <form action='/spaces' method='GET'>
-      <input type='submit' value='View Listings'>
-    </form>
+              <input type='submit' value='Sign up' id="sign-up-btn"> 
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
