@@ -112,7 +112,17 @@ class MakersBnB < Sinatra::Base
 
   patch '/requests/:id' do
     status = params.keys.include?('confirm') ? 'confirmed' : 'declined'
-    Request.update(params[:id], status: status)
+    booking = Request.update(params[:id], status: status)
+
+    space_id = booking.space_id
+    date_requested = booking.date_requested
+
+    if params.keys.include?('confirm')
+      Request.all.each do |request|
+        request.update(status: 'declined') if request.space_id == space_id && request.date_requested == date_requested && request.id != booking.id
+      end
+    end
+
     redirect '/requests'
   end
 
