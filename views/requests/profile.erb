@@ -12,8 +12,12 @@
 
     <form action='/requests/<%= @booking.id %>' method='POST'>
       <input type='hidden' name='_method' value='PATCH'>
-      <input type='submit' name='confirm' value='Confirm request from: <%= @user_from.email %>'>
-      <input type='submit' name='decline' value='Decline request from: <%= @user_from.email %>'>
+      <% if ['confirmed', 'declined'].include? @booking.status %>
+        <p>Booking <%= @booking.status %></p>
+      <% else %>
+        <input type='submit' name='confirm' value='Confirm request from: <%= @user_from.email %>'>
+        <input type='submit' name='decline' value='Decline request from: <%= @user_from.email %>'>
+      <% end %>
     </form>
   </body>
 </html>

@@ -14,6 +14,30 @@ def sign_in
   click_on 'Log in'
 end
 
+def sign_up_user_2
+  visit '/'
+  fill_in 'email address', with: 'tuna@test.com'
+  fill_in 'password', with: '12345'
+  fill_in 'password confirmation', with: '12345'
+  click_on 'Sign up'
+end
+
+def sign_up_user_3
+  visit '/'
+  fill_in 'email address', with: 'sam@test.com'
+  fill_in 'password', with: '12345'
+  fill_in 'password confirmation', with: '12345'
+  click_on 'Sign up'
+end
+
+def sign_in_user_3
+  visit '/'
+  click_on 'Login'
+  fill_in 'Email Address', with: 'sam@test.com'
+  fill_in 'Password', with: '12345'
+  click_on 'Log in'
+end
+
 def one_week
   604800 # in seconds
 end
@@ -42,14 +66,6 @@ end
 
 def test_space
   Space.where(name: 'BIG HOUSE').first
-end
-
-def sign_up_user_2
-  visit '/'
-  fill_in 'email address', with: 'tuna@test.com'
-  fill_in 'password', with: '12345'
-  fill_in 'password confirmation', with: '12345'
-  click_on 'Sign up'
 end
 
 def request_space
