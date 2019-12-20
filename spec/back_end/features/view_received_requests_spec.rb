@@ -6,14 +6,32 @@ feature 'view received requests' do
 
     sign_up_user_2
     click_on 'BIG HOUSE'
-    fill_in 'requested-date', with: '12/04/2019'
+
+    find('#requested-date').click
+    three_days = 3
+    tomorrow = first('.day') { |day| !day[:class].split.include? 'disabled' }
+    tomorrow.click
     click_on 'Request to Book'
-    # log out (nav bar functionality to implement)
 
     sign_in
     click_on 'Requests'
+
+    click_on 'BIG HOUSE'
+    click_on 'Confirm request from: tuna@test.com'
+
+    sign_up_user_3
+    click_on 'BIG HOUSE'
     
-    expect(page).to have_selector(:link_or_button, 'BIG HOUSE')
-    expect(page).to have_content '12/04/2019'
+    a_day = 1
+    find('#requested-date').click
+    first_available_date = first('.day') { |day| !day[:class].split.include? 'disabled' }
+    day_of_first_available_date = first_available_date.text
+    tomorrow = first('.day') { |day| day.text == (day_of_first_available_date.to_i - a_day).to_s }
+    tomorrow.click
+    click_on 'Request to Book'
+
+    
+    expect(find('#requested-date').value).to eq ''
+    expect(page).to have_current_path "/spaces/#{test_space.id}"
   end 
 end

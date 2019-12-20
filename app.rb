@@ -6,6 +6,7 @@ require_relative 'lib/user'
 require_relative 'lib/space'
 require_relative 'lib/request'
 require_relative 'lib/date_helper'
+require 'json'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')
 
@@ -69,8 +70,20 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
+  get '/availability' do
+    space = Space.find(session[:space_id])
+    confirmed_bookings = Request.where(space_id: session[:space_id], status: "Confirmed")
+    confirmed_bookings = confirmed_bookings.map { |request| request.date_requested }
+    response = { 
+      available_from: space.available_from,
+      available_to: space.available_to,
+      confirmed_bookings: confirmed_bookings,
+    }.to_json
+  end
+
   get '/spaces/:id' do
     @space = Space.find(params[:id])
+    session
     @available_range_of_dates = { 
       available_from: @space.available_from, 
       available_to: @space.available_to
