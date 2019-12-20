@@ -111,7 +111,7 @@ class MakersBnB < Sinatra::Base
   end
 
   patch '/requests/:id' do
-    status = params.keys.include?('confirm') ? 'Confirmed' : 'Declined'
+    status = params.keys.include?('confirm') ? 'confirmed' : 'declined'
     Request.update(params[:id], status: status)
     redirect '/requests'
   end
