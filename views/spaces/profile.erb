@@ -26,16 +26,30 @@
     
     <script type="text/javascript">
       $(document).ready(function () {
-        $('#requested-date').datepicker({
-          format: "dd/mm/yyyy",
-          startDate: $('#available-from').text(),
-          endDate: $('#available-to').text(),
-          autoclose: true,
-          forceParse: false,
-          disableEntry: true,
-          clearBtn: true,
-          datesDisabled: ['25/12/2019']
-        });  
+
+        var date1
+
+
+        $.get('/availability', (data) => {
+            var obj = JSON.parse(data)
+            var date_from = obj.available_from
+            var date_to = obj.available_to
+            var confirmed_bookings = obj.confirmed_bookings
+            console.log(date_from)
+            console.log(date_to)
+
+          $('#requested-date').datepicker({
+            format: "dd/mm/yyyy",
+            startDate: date_from,
+            endDate: date_to,
+            autoclose: true,
+            forceParse: false,
+            disableEntry: true,
+            clearBtn: true,
+            datesDisabled: confirmed_bookings
+          }); 
+        });
+        
       });
     </script>
   </body>
