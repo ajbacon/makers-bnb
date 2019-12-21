@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="css/sessions/new.css" type="text/css" rel="stylesheet">
     <title>Document</title>
   </head>
   <body>
-    <h1> Log in MakersBnB </h1> 
-    <h2><%= flash[:notice] %></h2>
+    <div id="screen"></div>
+    <div id="content">
+      <div id="log-in-page">
+        <h1> Log in MakersBnB </h1> 
+        <h2><%= flash[:notice] %></h2>
 
-    <form action='/sessions/new' method='POST'>
-      <label for='Email Address'>Email Address</label>
-      <input type='Text' name='email address' id='Email Address'>
+        <form action='/sessions/new' method='POST'>
+          <label for='Email Address'>Email Address</label>
+          <input type='Text' name='email address' id='Email Address'>
 
-      <label for='Password'>Password</label>
-      <input type='password' name='password' id='Password'>
-      
-      <input type='submit' value='Log in'> 
-    </form>
+          <label for='Password'>Password</label>
+          <input type='password' name='password' id='Password'>
+          
+          <input type='submit' value='Log in'> 
+        </form>
+      </div>
+    </div>
   </body>
 </html>
