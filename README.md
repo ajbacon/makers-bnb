@@ -4,17 +4,38 @@
 # Makers BnB
 -
 
-[Outline](#Outline) | [Task](#Task) | [Installation Instructions](#Installation) | [Feature Tests](#Feature_Tests) | [User Stories](#Story) | [Objects & Methods](#Methods) |
+[Outline](#Outline) | [Task](#the-task) | [Installation Instructions](#installation-instructions) | [Testing](#testing) | [User Stories](#user-stories) | 
 
 
-## <a name="Outline">Outline</a>
+## Outline
  
-Week long group challenge to build a Airbnb clone
+Week long group challenge to build an Airbnb website clone
 
-## <a name="Task">The Task</a>
+## The Task
+
+## The Team
+
+Tuan Nguyen
+Sam Folorunsho
+Andrea Di
+Andrew Bacon
+
+## Features
+
+* user sign up (validation on unique email adresses)
+* user sign in
+* password encryption
+* user sign out
+* list space
+* viewing all available spaces
+* request space
+* space owner booking confirmation
+* space owner booking rejection
+* Greyed out calendar dates that are unavailable
 
 
-## <a name="Installation">Installation Instructions</a>
+
+## Installation Instructions
 
 Clone the repository from github then change directory into it.
 
@@ -58,72 +79,28 @@ $ rackup
 To view sign-up page, navigate to `localhost:9292/`.
 
 
-## <a name="Feature_Tests">Feature Tests (How it works)</a>
+## Testing
 
-To run the tests type the following into the terminal
+The main focus of the team was to fully feature test the app. Unit tests were added where model functionality was required beyond that provided by inherited Gems. To run the tests, run rspec within the terminal 
 
 ````
 $ rspec
 ````
 
+## Technologies used
 
-## <a name="Story">User Stories</a>
-
-```
-STRAIGHT UP
-
-As a Maker
-So that I can let people know what I am doing  
-I want to post a message (peep) to chitter
-
-As a maker
-So that I can see what others are saying  
-I want to see all peeps in reverse chronological order
-
-As a Maker
-So that I can better appreciate the context of a peep
-I want to see the time at which it was made
-
-As a Maker
-So that I can post messages on Chitter as me
-I want to sign up for Chitter
-
-HARDER
-
-As a Maker
-So that only I can post messages on Chitter as me
-I want to log in to Chitter
-
-As a Maker
-So that I can avoid others posting messages on Chitter as me
-I want to log out of Chitter
-
-ADVANCED
-
-As a Maker
-So that I can stay constantly tapped in to the shouty box of Chitter
-I want to receive an email if I am tagged in a Peep.
-```
-
-
-## <a name="Methods">Objects & Methods</a>
--
-
-
-### Object
-
-
-| Methods        | Description                                            |
-|----------------|--------------------------------------------------------|
-| | |
-  
-
-
-
+ * Ruby
+ * Sinatra
+ * Capybara
+ * Rspec
+ * HTML
+ * CSS
+ * Bootstrap
+ * JQuery / Ajax
+ * ActiveRecord
+ * PostgreSQL
 
 ## User Stories
-
-### MVP
 
 ```
 As a user
@@ -174,3 +151,5 @@ As a user
 Until a request has been accepted
 I want to still be able to put in an offer for a space
 ```
+
+
