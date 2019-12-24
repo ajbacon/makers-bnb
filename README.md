@@ -4,14 +4,14 @@
 # Makers BnB
 -
 
-[Outline](#outline) |[The Team](#the-team) |[Task](#the-task) | [Installation Instructions](#installation-instructions) | [Testing](#testing) | [User Stories](#user-stories) | 
+[Application Summary](#application-summary) |[The Team](#the-team) |[Features](#features) | [Getting Started](#getting-started) | [Testing](#testing) | [Screenshots](#screenshots) |[User Stories](#user-stories) | 
 
 
 ## Application Summary
 
-Week long group challenge to build an Airbnb website clone
+MakersBnB is an online platfrom for listing short-term lets. Renters can view the available spaces and send the host a request to book. The host can then choose to accept or decline the request.
 
-## The Task
+It was developed as part of the group project in week 6 of the Makers Bootcamp.
 
 ## The Team
 
@@ -35,7 +35,7 @@ Week long group challenge to build an Airbnb website clone
 
 
 
-## Installation Instructions
+## Getting Started
 
 Clone the repository from github then change directory into it.
 
@@ -53,7 +53,7 @@ $ brew install geckodriver
 ```
 
 
-### To set up the database
+### Database Setup
 
 Access to the database is controlled by an ORM, ActiveRecord. To migrate the development and test databases/tables please run the following command:
 
@@ -87,7 +87,11 @@ The main focus of the team was to fully feature test the app. Unit tests were ad
 $ rspec
 ````
 
+## Screenshots
+
 ## Technologies used
+
+The following technologies were used to develop the application:
 
  * Ruby
  * Sinatra
@@ -102,6 +106,9 @@ $ rspec
 
 ## User Stories
 
+MakersBnB was developed based on the following user stories
+
+### Minimum Viable Product
 ```
 As a user
 So that I can book or host spaces
@@ -128,7 +135,7 @@ So that I can plan my travel
 I want to be able to request a space for one night
 ```
 
-### Stretch
+### Stretch Goals
 
 ```
 As a user
