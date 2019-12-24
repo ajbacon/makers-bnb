@@ -4,21 +4,21 @@
 # Makers BnB
 -
 
-[Outline](#Outline) | [Task](#the-task) | [Installation Instructions](#installation-instructions) | [Testing](#testing) | [User Stories](#user-stories) | 
+[Outline](#outline) |[The Team](#the-team) |[Task](#the-task) | [Installation Instructions](#installation-instructions) | [Testing](#testing) | [User Stories](#user-stories) | 
 
 
-## Outline
- 
+## Application Summary
+
 Week long group challenge to build an Airbnb website clone
 
 ## The Task
 
 ## The Team
 
-Tuan Nguyen
-Sam Folorunsho
-Andrea Di
-Andrew Bacon
+[Tuan Nguyen](https://github.com/TuanNguyen1010)
+[Sam Folorunsho](https://github.com/samfolo)
+[Andrea Diotallevi](https://github.com/AndreaDiotallevi)
+[Andrew Bacon](https://github.com/ajbacon)
 
 ## Features
 
