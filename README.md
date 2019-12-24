@@ -2,7 +2,6 @@
 ### [Makers Academy](http://www.makersacademy.com) - Week 6 Group Project
 
 # Makers BnB
--
 
 [Application Summary](#application-summary) |[The Team](#the-team) |[Features](#features) | [Getting Started](#getting-started) | [Testing](#testing) | [Screenshots](#screenshots) |[User Stories](#user-stories) | 
 
@@ -55,7 +54,9 @@ $ brew install geckodriver
 
 ### Database Setup
 
-Access to the database is controlled by an ORM, ActiveRecord. To migrate the development and test databases/tables please run the following command:
+Access to the database is controlled by an ORM, ActiveRecord. ActiveRecord rake tasks will are used to migrate the development and test databases. 
+
+To migrate the development and test databases, please run the following command:
 
 ```
 $ rack db:create
@@ -68,20 +69,18 @@ $ rack db:migrate
 $ rack db:migrate RACK_ENV=test
 ```
 
-
 ### To run the MakersBnB app:
 
 ```
 $ rackup
 ```
 
-
 To view sign-up page, navigate to `localhost:9292/`.
 
 
 ## Testing
 
-The main focus of the team was to fully feature test the app. Unit tests were added where model functionality was required beyond that provided by inherited Gems. To run the tests, run rspec within the terminal 
+The main focus of the team was to fully test all features within the application. Unit tests were added where model functionality was required beyond that provided by inherited Gems. To run the tests, run rspec within the terminal.
 
 ````
 $ rspec
