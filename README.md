@@ -59,14 +59,14 @@ Access to the database is controlled by an ORM, ActiveRecord. ActiveRecord rake 
 To migrate the development and test databases, please run the following command:
 
 ```
-$ rack db:create
+$ rake db:create
 ```
 
 To poplulate the databases with the appropriate tables, run the following migrations:
 
 ```
-$ rack db:migrate
-$ rack db:migrate RACK_ENV=test
+$ rake db:migrate
+$ rake db:migrate RACK_ENV=test
 ```
 
 ### To run the MakersBnB app:
