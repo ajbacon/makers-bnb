@@ -10,7 +10,7 @@
 
 MakersBnB is an online platfrom for listing short-term lets. Renters can view the available spaces and send the host a request to book. The host can then choose to accept or decline the request.
 
-It was developed as part of the group project in week 6 of the Makers Bootcamp.
+It was developed as part of the group project in week 6 of the Makers Academy Bootcamp.
 
 ## The Team
 
@@ -157,5 +157,3 @@ As a user
 Until a request has been accepted
 I want to still be able to put in an offer for a space
 ```
-
-
