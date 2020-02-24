@@ -50,8 +50,8 @@ def tomorrow
   (Time.now + one_day).strftime('%Y-%m-%d')
 end
 
-def one_week_and_one_day_from_now
-  (Time.now + one_week + one_day).strftime('%Y-%m-%d')
+def one_week_from_now
+  (Time.now + one_week).strftime('%Y-%m-%d')
 end
 
 def list_test_space
@@ -60,7 +60,7 @@ def list_test_space
   fill_in 'description', with: "it's big.."
   fill_in 'price-per-night', with: '500'
   page.find('#available-from').set(tomorrow) # tomorrow
-  page.find('#available-to').set(one_week_and_one_day_from_now) # 1 week and 1 day from today
+  page.find('#available-to').set(one_week_from_now) # 1 week from today
   click_on 'List my Space'
 end
 
