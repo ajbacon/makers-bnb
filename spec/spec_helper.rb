@@ -18,7 +18,7 @@ require_relative 'back_end/features/web_helpers.rb'
 
 Capybara.app = MakersBnB
 
-Capybara.default_driver = :selenium
+Capybara.default_driver = :selenium_headless
 Capybara.server = :webrick
 
 RSpec.configure do |config|
