@@ -1,113 +1,51 @@
+# MakersBnB
 
-### [Makers Academy](http://www.makersacademy.com) - Week 6 Group Project
+[Description](#description) | [Live Demo](#live-demo) | [The Team](#the-team) | [Challenges and Goals](#challenges-and-goals) | [Features](#features) | [User Stories](#user-stories) | [Getting Started](#getting-started) | [Database Setup](#database-setup) | [How to Run the App](#how-to-run-the-app) | [Technologies Used](#technologies-used) | [How to Run the Tests](#how-to-run-the-tests) | [Code Quality](#code-quality) | [Relational Database Associations](#relational-database-associations)
 
-# Makers BnB
+## Description
 
-[Application Summary](#application-summary) |[The Team](#the-team) |[Features](#features) | [Getting Started](#getting-started) | [Testing](#testing) | [Screenshots](#screenshots) |[User Stories](#user-stories) | 
+A full-stack web application in Ruby on Sinatra for listing short-term lets. Renters can view the available spaces and send the host a request to book. The host can then choose to accept or decline the request.
 
+## Live Demo
 
-## Application Summary
-
-MakersBnB is an online platfrom for listing short-term lets. Renters can view the available spaces and send the host a request to book. The host can then choose to accept or decline the request.
-
-It was developed as part of the group project in week 6 of the Makers Academy Bootcamp.
+The application is deployed to Heroku at this link: [https://makers-bnb-sinatra.herokuapp.com/](https://makers-bnb-sinatra.herokuapp.com/)
 
 ## The Team
 
-[Tuan Nguyen](https://github.com/TuanNguyen1010)
-[Sam Folorunsho](https://github.com/samfolo)
-[Andrea Diotallevi](https://github.com/AndreaDiotallevi)
-[Andrew Bacon](https://github.com/ajbacon)
+This was a group project during week 6 of [Makers Academy](https://makers.tech/). The team was composed by:
+
+* [Tuan Nguyen](https://github.com/TuanNguyen1010)
+* [Sam Folorunsho](https://github.com/samfolo)
+* [Andrea Diotallevi](https://github.com/AndreaDiotallevi)
+* [Andrew Bacon](https://github.com/ajbacon)
+
+## Challenges and Goals
+
+* Build a full-stack web application to simulate the [Airbnb](https://www.airbnb.co.uk/) website
+* Build a MVC application following conventional design patterns
+* Design relational database associations and RESTful routes
+* Write SQL-like queries through an Object-Relational Mapping system like Active Record within a MVC application
+* Build a fully-tested application with 100% test coverage
 
 ## Features
 
-* user sign up (validation on unique email adresses)
-* user sign in
-* password encryption
-* user sign out
-* list space
-* viewing all available spaces
-* request space
-* space owner booking confirmation
-* space owner booking rejection
+* Sign up (validation on unique email adresses)
+* Sign in
+* Password encryption
+* Sign out
+* List space
+* View all available spaces
+* Request space
+* Space owner book confirmation
+* Space owner book rejection
 * Greyed out calendar dates that are unavailable
-
-
-
-## Getting Started
-
-Clone the repository from github then change directory into it.
-
-Load dependencies with bundle.
-```
-$ gem install bundle
-$ bundle
-```
-
-In order to run the feature tests, Firefox and Firefox GeckoDriver are required. To install these, run the following commands:
-
-```
-$ brew cask install firefox
-$ brew install geckodriver
-```
-
-
-### Database Setup
-
-Access to the database is controlled by an ORM, ActiveRecord. ActiveRecord rake tasks will are used to migrate the development and test databases. 
-
-To migrate the development and test databases, please run the following command:
-
-```
-$ rake db:create
-```
-
-To poplulate the databases with the appropriate tables, run the following migrations:
-
-```
-$ rake db:migrate
-$ rake db:migrate RACK_ENV=test
-```
-
-### To run the MakersBnB app:
-
-```
-$ rackup
-```
-
-To view sign-up page, navigate to `localhost:9292/`.
-
-
-## Testing
-
-The main focus of the team was to fully test all features within the application. Unit tests were added where model functionality was required beyond that provided by inherited Gems. To run the tests, run rspec within the terminal.
-
-````
-$ rspec
-````
-
-## Screenshots
-
-## Technologies used
-
-The following technologies were used to develop the application:
-
- * Ruby
- * Sinatra
- * Capybara
- * Rspec
- * HTML
- * CSS
- * Bootstrap
- * JQuery / Ajax
- * ActiveRecord
- * PostgreSQL
 
 ## User Stories
 
-MakersBnB was developed based on the following user stories
+MakersBnB was developed based on the following user stories.
 
 ### Minimum Viable Product
+
 ```
 As a user
 So that I can book or host spaces
@@ -157,3 +95,75 @@ As a user
 Until a request has been accepted
 I want to still be able to put in an offer for a space
 ```
+
+## Getting Started
+
+* Clone the repository from github then change directory into it.
+* Load dependencies with bundle:
+  ```
+  $ gem install bundle
+  $ bundle
+  ```
+* In order to run the feature tests, Firefox and Firefox GeckoDriver are required. To install these, run the following commands:
+  ```
+  $ brew cask install firefox
+  $ brew install geckodriver
+  ```
+
+## Database Setup
+
+* Access to the database is controlled by an ORM, ActiveRecord. ActiveRecord rake tasks which are used to migrate the development and test databases. 
+* To migrate the development and test databases, please run the following command:
+  ```
+  $ rake db:create
+  ```
+* To poplulate the databases with the appropriate tables, run the following migrations:
+  ```
+  $ rake db:migrate
+  $ rake db:migrate RACK_ENV=test
+  ```
+
+## How to Run the App:
+
+To view the sign-up page, type ```rackup``` and navigate to ```localhost:9292```
+
+## Technologies used
+
+The following technologies were used to develop the application:
+
+* Main technologies:
+  - Ruby
+  - Sinatra
+  - ActiveRecord
+  - PostgreSQL
+  - JQuery / Ajax
+  - Bootstrap
+  - HTML
+  - CSS
+  
+* Testing frameworks:
+  - RSpec
+  - Capybara
+  - Selenium WebDriver
+  
+## How to Run the Tests
+  
+The main focus of the team was to fully test all features within the application. Unit tests were added where model functionality was required beyond that provided by inherited Gems. To run the tests, run rspec within the terminal.
+
+```$ rspec```
+  
+## Code Quality
+
+To run the linter type ```rubocop```
+
+## Relational Database Associations
+
+| Users      | Spaces          | Requests.      |
+| ---------- | --------------- | -------------- |
+| id         | id              | id             |
+| email      | user_id         | user_id        |
+| password   | name            | space_id       |
+|            | description     | date_requested |
+|            | price_per_night | status         |
+|            | available_from  |                |
+|            | available_to    |                |
