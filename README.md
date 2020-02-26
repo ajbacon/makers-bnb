@@ -1,6 +1,6 @@
 # MakersBnB
 
-[Description](#description) | [Live Demo](#live-demo) | [The Team](#the-team) | [Challenges and Goals](#challenges-and-goals) | [Features](#features) | [User Stories](#user-stories) | [Getting Started](#getting-started) | [Database Setup](#database-setup) | [How to Run the Tests](#how-to-run-the-tests) | [How to Run the App](#how-to-run-the-app) | [Technologies Used](#technologies-used) | [Code Quality](#code-quality) | [Relational Database Associations](#relational-database-associations)
+[Description](#description) | [Live Demo](#live-demo) | [The Team](#the-team) | [Challenges and Goals](#challenges-and-goals) | [Features](#features) | [User Stories](#user-stories) | [Getting Started](#getting-started) | [Database Setup](#database-setup) | [How to Run the Tests](#how-to-run-the-tests) | [How to Run the App](#how-to-run-the-app) | [Technologies Used](#technologies-used) | [Code Quality](#code-quality) | [Continuous Integration](#continuous-integration) | [Relational Database Associations](#relational-database-associations)
 
 ## Description
 
@@ -153,6 +153,10 @@ The following technologies were used to develop the application:
 ## Code Quality
 
 To run the linter type ```rubocop```
+
+## Continuous Integration
+
+[TravisCI](https://travis-ci.com/) has been use for continuous integration and automatic deployment to [Heroku](https://dashboard.heroku.com).
 
 ## Relational Database Associations
 
