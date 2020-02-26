@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gem 'activerecord'
 gem 'bcrypt'
 gem 'capybara'
+gem 'geckodriver-helper', '~> 0.0.3'
 gem 'json'
 gem 'launchy'
 gem 'pg'
