@@ -68,7 +68,6 @@ def test_space
   Space.where(name: 'BIG HOUSE').first
 end
 
-
 def request_space
   # click on the first listed space
   click_on 'BIG HOUSE'

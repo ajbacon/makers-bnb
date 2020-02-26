@@ -2,3 +2,5 @@
 /coverage/
 
 capybara-*
+
+Gemfile.lock

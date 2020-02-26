@@ -7,6 +7,7 @@ require_relative 'lib/space'
 require_relative 'lib/request'
 require_relative 'lib/date_helper'
 require 'json'
+require 'dotenv/load'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'makersbnb')
 
@@ -59,7 +60,7 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     user = User.find(session[:user_id])
-    user.spaces.create({
+    user.spaces.create({ 
       name: params[:name], 
       description: params[:description], 
       price_per_night: params[:'price-per-night'],
@@ -74,7 +75,7 @@ class MakersBnB < Sinatra::Base
     space = Space.find(session[:space_id])
     confirmed_bookings = Request.where(space_id: session[:space_id], status: "confirmed")
     confirmed_bookings = confirmed_bookings.map { |request| request.date_requested }
-    response = { 
+    { 
       available_from: space.available_from,
       available_to: space.available_to,
       confirmed_bookings: confirmed_bookings,
