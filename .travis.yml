@@ -17,11 +17,8 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
+  api_key:
+    secure: Z5psfk06vSJ38JhqfyprjoKLiNm5Zy1xUcQTyKg13G6MQZSUt1y+wYbi2Ust/FA53Vo5lMm/uM+kSIw7l2tGwdwXgYATo9AzHLnpH59gS3MkyEF2QPBu7Jse1gvwKptQ0XTznhkbM7gapxzKUMk+wpPLd0I61qVdJ6hLgk/PxOvEjq1uusHTEqQhicdqrvq6BVePfJ98HsaKFzDRuipCSboAT4hqshfvbPQjmAuWhO4sCIxTwSMQtHP2EDWzb1zeaotAdgtv+heH7QXuwiazwPITUFaLUdRK3CQLI6w968Qxl8f/Bw+s+BMvtAh8BW9x2uaxFh94WCt7t+pVfKGc9DTHbAK5zxgoCv2XuD2FXCKsb0rmU0SB8fB3tdtrg9a5ELoiyWKpWE14Mmh5jiWmwQ4Mqdht2vpT35sVU9wFRGVdTE28ilq8T8mreorgB+tdR0lLML7C5APL63ADP5ZKq8TAjVjf6kzPlodymW7FlvZoE3vOrH7AZLcwdxvw30pB+CSgpPPr4lnPrggkGk/UOO2i1oj/xbFXJED6LXwIeoXVQM9TRmwYATyvUXJKBYGivwSyZ/YzBk/qWGk8FxJcNgeC34ZHe7KjI3yV29s4pyqZ4YQhwxz51SoxMgT+VJ55N1Og86yBPd2W8TwCX0s0XDpIwlkoqC7IRacprbu5UpM=
   app: makers-bnb-sinatra
   on:
     repo: ajbacon/makers-bnb
-  run:
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate
-  api_key:
-    secure: ENV['HEROKU_API_KEY']
