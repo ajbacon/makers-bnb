@@ -8,7 +8,6 @@ feature 'view received requests' do
     click_on 'BIG HOUSE'
 
     find('#requested-date').click
-    three_days = 3
     tomorrow = first('.day') { |day| !day[:class].split.include? 'disabled' }
     tomorrow.click
     click_on 'Request to Book'

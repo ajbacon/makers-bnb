@@ -1,6 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
 require 'timecop'
+require 'dotenv/load'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console])
 
