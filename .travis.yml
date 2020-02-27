@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=a8a905186e99a0f3a37374717068645bdf1ae93f2f2773220c57a4c6096dd70e
 language: ruby
 rvm:
 - 2.6.3
@@ -9,12 +12,17 @@ before_install:
   - tar -xzf geckodriver-v0.22.0-linux64.tar.gz -C geckodriver
   - export PATH=$PATH:$PWD/geckodriver
 services:
-- postgresql
+  - postgresql
 before_script:
-- bundle exec rake db:create
-- bundle exec rake db:migrate
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
-- bundle exec rspec
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
 deploy:
   provider: heroku
   api_key:
