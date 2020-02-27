@@ -112,14 +112,15 @@ GEM
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    simplecov (0.18.2)
+    simplecov (0.17.1)
       docile (~> 1.1)
-      simplecov-html (~> 0.11)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
     simplecov-console (0.6.0)
       ansi
       simplecov
       terminal-table
-    simplecov-html (0.12.0)
+    simplecov-html (0.10.2)
     sinatra (2.0.8.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -170,7 +171,7 @@ DEPENDENCIES
   rspec
   rubocop (= 0.71.0)
   selenium-webdriver
-  simplecov
+  simplecov (= 0.17.1)
   simplecov-console
   sinatra
   sinatra-activerecord
